@@ -11,21 +11,31 @@
 <body>
   <!-- 机密文件翻译是需要将数字以五位数分开，进行转码 -->
   <script type="text/javascript">
-    function changeNubmer(str) {
-      var arr = [];
-      for (var i = 0; i < str.length; i++) {
-        var a;
-        a = str.charCodeAt(i).toString();
-        if (a.length != 5) {
-          for (j = 0; j <= 5 - (a.length - 1); j++) {
-            a = "0" + a;
-          }
-        }
-        arr.push(a);
-      }
-      return arr.join('');
-    }
-  console.log(changeNubmer(prompt('请输入一段文字')));
+  //   function changeNubmer(str) {
+  //     var arr = [];
+  //     for (var i = 0; i < str.length; i++) {
+  //       var a;
+  //       a = str.charCodeAt(i).toString();
+  //       if (a.length != 5) {
+  //         for (j = 0; j <= 5 - (a.length - 1); j++) {
+  //           a = "0" + a;
+  //         }
+  //       }
+  //       arr.push(a + ',');
+  //     }
+  //     return arr.join('');
+  //   }
+  // console.log(changeNubmer(prompt('请输入一段文字')));
+  // var strs = '25105'
+  function string(item) {
+    var arr = item.split(',')
+    var str = ''
+    arr.forEach(function (item) {
+      str += String.fromCharCode(item)
+    })
+    return str
+  }
+  console.log(string(prompt('请输入密码')))
 
   </script>
 </body>
